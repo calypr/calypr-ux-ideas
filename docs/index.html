@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calypr Home Mockup</title>
+    <style>
+      :root {
+        --bg: #f6f8fa;
+        --panel: #ffffff;
+        --border: #d0d7de;
+        --text: #1f2328;
+        --muted: #59636e;
+        --subtle: #f3f4f6;
+        --accent: #0969da;
+        --accent-dark: #0550ae;
+        --success: #1a7f37;
+        --shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+        --radius: 8px;
+        --radius-sm: 6px;
+        --max: 1440px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .topbar {
+        height: 64px;
+        background: #24292f;
+        color: #f0f6fc;
+        border-bottom: 1px solid #1b1f24;
+      }
+
+      .topbar-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 0 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .brand-mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #f0f6fc;
+        color: #24292f;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .search {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .search input {
+        width: 100%;
+        height: 36px;
+        border-radius: 6px;
+        border: 1px solid #57606a;
+        background: #24292f;
+        color: #f0f6fc;
+        padding: 0 12px;
+        outline: none;
+      }
+
+      .search input::placeholder {
+        color: #8b949e;
+      }
+
+      .topnav {
+        display: flex;
+        gap: 16px;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .topnav a {
+        color: #f0f6fc;
+        opacity: 0.95;
+      }
+
+      .top-actions {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .icon-btn,
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(240, 246, 252, 0.08);
+        border: 1px solid rgba(240, 246, 252, 0.08);
+        font-size: 14px;
+      }
+
+      .page {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 240px minmax(0, 1fr) 280px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .sidebar-section,
+      .right-section,
+      .main-section {
+        margin-bottom: 16px;
+      }
+
+      .section-header {
+        padding: 14px 16px 0;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .nav-list,
+      .link-list,
+      .activity-list {
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+      }
+
+      .nav-list a,
+      .link-list a {
+        display: block;
+        padding: 10px 12px;
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+      }
+
+      .nav-list a.active {
+        background: #ddf4ff;
+        color: #0969da;
+        font-weight: 600;
+      }
+
+      .nav-list a:hover,
+      .link-list a:hover {
+        background: var(--subtle);
+      }
+
+      .hero {
+        padding: 24px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        background: #ddf4ff;
+        border: 1px solid #b6e3ff;
+        border-radius: 999px;
+        padding: 4px 8px;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 800px;
+      }
+
+      .cards {
+        display: grid;
+        gap: 16px;
+      }
+
+      .choice-card {
+        padding: 20px;
+      }
+
+      .choice-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+
+      .choice-card h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .tag {
+        font-size: 12px;
+        color: var(--muted);
+        background: var(--subtle);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 8px;
+        white-space: nowrap;
+      }
+
+      .choice-card p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        padding: 0 12px;
+        border-radius: 6px;
+        border: 1px solid rgba(31, 35, 40, 0.15);
+        background: #f6f8fa;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .btn-primary {
+        background: var(--success);
+        color: #fff;
+        border-color: rgba(31, 35, 40, 0.15);
+      }
+
+      .btn-primary:hover {
+        background: #187130;
+      }
+
+      .text-link {
+        font-size: 14px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .activity {
+        padding-bottom: 8px;
+      }
+
+      .activity-list li,
+      .bullet-list li {
+        padding: 12px 16px;
+        border-top: 1px solid #d8dee4;
+        font-size: 14px;
+        color: var(--text);
+      }
+
+      .activity-list li small,
+      .meta {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .right-card {
+        padding-bottom: 8px;
+      }
+
+      .right-card .body {
+        padding: 12px 16px 4px;
+      }
+
+      .right-card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+
+      .right-card p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .bullet-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      @media (max-width: 1100px) {
+        .layout {
+          grid-template-columns: 220px minmax(0, 1fr);
+        }
+
+        .right-rail {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .topbar-inner {
+          flex-wrap: wrap;
+          height: auto;
+          padding: 12px 16px;
+        }
+
+        .search,
+        .topnav {
+          order: 3;
+          width: 100%;
+        }
+
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .right-rail {
+          grid-template-columns: 1fr;
+        }
+
+        .page {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <span>Calypr</span>
+        </div>
+
+        <div class="search">
+          <input type="text" placeholder="Search datasets, analyses, results, and docs" />
+        </div>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="#">Workspace</a>
+          <a href="#">Explore</a>
+          <a href="#">Published Results</a>
+          <a href="#">Datasets</a>
+          <a href="#">Docs</a>
+        </nav>
+
+        <div class="top-actions">
+          <div class="icon-btn" aria-hidden="true">🔔</div>
+          <div class="icon-btn" aria-hidden="true">?</div>
+          <div class="avatar" aria-hidden="true">BW</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="layout">
+        <aside class="left-rail">
+          <section class="panel sidebar-section">
+            <div class="section-header">Navigation</div>
+            <ul class="nav-list">
+              <li><a class="active" href="#">Home</a></li>
+              <li><a href="#">Workspace</a></li>
+              <li><a href="#">Explore</a></li>
+              <li><a href="#">Published Results</a></li>
+              <li><a href="#">Datasets</a></li>
+              <li><a href="#">Saved Queries</a></li>
+              <li><a href="#">Reports</a></li>
+              <li><a href="#">Docs</a></li>
+            </ul>
+          </section>
+
+          <section class="panel sidebar-section">
+            <div class="section-header">Recent</div>
+            <ul class="link-list">
+              <li><a href="#">My analysis workspace</a></li>
+              <li><a href="#">Cohort import review</a></li>
+              <li><a href="#">Release QA checklist</a></li>
+            </ul>
+          </section>
+        </aside>
+
+        <section class="center-column">
+          <section class="panel main-section hero">
+            <div class="eyebrow">Shared data platform</div>
+            <h1>One platform for contributing, exploring, and publishing data</h1>
+            <p>
+              Use the same trusted datasets to manage submissions, perform analysis,
+              and share published findings. Choose the workspace that matches what you
+              want to do today.
+            </p>
+          </section>
+
+          <section class="cards main-section" aria-label="Primary choices">
+            <article class="panel choice-card">
+              <div class="choice-top">
+                <h2>Contribute &amp; Build</h2>
+                <span class="tag">For contributors and developers</span>
+              </div>
+              <p>
+                Submit data, manage ingestion workflows, monitor pipeline health, and
+                maintain data quality.
+              </p>
+              <div class="actions">
+                <a class="btn btn-primary" href="#">Open workspace</a>
+                <a class="text-link" href="#">View recent jobs</a>
+              </div>
+            </article>
+
+            <article class="panel choice-card">
+              <div class="choice-top">
+                <h2>Explore &amp; Analyze</h2>
+                <span class="tag">For readers and analysts</span>
+              </div>
+              <p>
+                Search, query, filter, compare, and export shared datasets with tools
+                designed for interactive investigation.
+              </p>
+              <div class="actions">
+                <a class="btn btn-primary" href="#">Start exploring</a>
+                <a class="text-link" href="#">Browse saved queries</a>
+              </div>
+            </article>
+
+            <article class="panel choice-card">
+              <div class="choice-top">
+                <h2>Published Results</h2>
+                <span class="tag">For stakeholders and collaborators</span>
+              </div>
+              <p>
+                Browse curated findings, released analyses, and presentation-ready
+                outputs built on the same underlying data.
+              </p>
+              <div class="actions">
+                <a class="btn btn-primary" href="#">View published results</a>
+                <a class="text-link" href="#">See latest release</a>
+              </div>
+            </article>
+          </section>
+
+          <section class="panel main-section activity">
+            <div class="section-header">Recent activity</div>
+            <ul class="activity-list">
+              <li>
+                New data release published
+                <small>Release 2026.05 is now available in Published Results.</small>
+              </li>
+              <li>
+                2 ingestion jobs completed successfully
+                <small>Workspace pipelines for Program A and Cohort B finished in the last hour.</small>
+              </li>
+              <li>
+                Saved query updated
+                <small>"High-confidence variants by cohort" was updated by the analyst team.</small>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <aside class="right-rail">
+          <section class="panel right-section right-card">
+            <div class="section-header">Featured</div>
+            <div class="body">
+              <h3>Lung cohort summary</h3>
+              <p>Curated findings prepared for presentation and stakeholder review.</p>
+              <a class="btn" href="#">View result</a>
+            </div>
+          </section>
+
+          <section class="panel right-section right-card">
+            <div class="section-header">Recent datasets</div>
+            <ul class="bullet-list">
+              <li>
+                Program A
+                <span class="meta">Updated 2 hours ago</span>
+              </li>
+              <li>
+                Cohort B
+                <span class="meta">Updated yesterday</span>
+              </li>
+              <li>
+                Release 2026.05
+                <span class="meta">Published this week</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="panel right-section right-card">
+            <div class="section-header">Announcements</div>
+            <ul class="bullet-list">
+              <li>
+                Schema update available
+                <span class="meta">Review changes before the next ingestion cycle.</span>
+              </li>
+              <li>
+                New publication live
+                <span class="meta">A new curated result has been added to Published Results.</span>
+              </li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
