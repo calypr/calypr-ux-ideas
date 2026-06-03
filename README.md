@@ -1,33 +1,45 @@
-# Homepage UX Review
+# Homepage UX Review: GitHub-Style Entry Experience
 
-## Recommendation
+This document set proposes a GitHub.com-inspired homepage for a shared data platform that supports three primary user intents:
 
-Design the homepage as a **GitHub-style logged-in dashboard** for one shared data platform with three clear entry points:
-
-1. **Contribute & Build** — for contributors and developers
-2. **Explore & Analyze** — for readers and analysts
+1. **Contribute & Build** — for data contributors and developers
+2. **Explore & Analyze** — for data readers and analysts
 3. **Published Results** — for curated, presentation-ready outputs
 
-## Why
+The goal is to present these as **three ways of working within one platform**, not as three disconnected products.
 
-Both the dashboard and portal are backed by the same datasets, so the UX should communicate:
+## View the mockup
 
-> One platform, three ways to work with the same trusted data.
+- GitHub Pages: [Homepage mockup](https://calypr.github.io/calypr-ux-ideas/)
+- Repository file: [docs/index.html](https://github.com/calypr/calypr-ux-ideas/blob/main/docs/index.html)
 
-This approach helps users quickly understand where to start, reduces product fragmentation, and keeps the relationship between operational, analytical, and published experiences clear.
+## Included documents
 
-## Included docs
+- `01-summary.md` — high-level recommendation and rationale
+- `02-information-architecture.md` — naming, structure, navigation model
+- `03-homepage-mockup-github-style.md` — homepage wireframe and layout guidance
+- `04-content-copy.md` — proposed UI copy and microcopy
+- `05-open-questions.md` — decisions for product, UX, and engineering review
 
-- `docs/homepage-ux/01-summary.md`
-- `docs/homepage-ux/02-information-architecture.md`
-- `docs/homepage-ux/03-homepage-mockup-github-style.md`
-- `docs/homepage-ux/04-content-copy.md`
-- `docs/homepage-ux/05-open-questions.md`
+## Core recommendation
 
-## Review focus
+Use a **logged-in dashboard/homepage pattern similar to GitHub.com**, with:
+- a shared platform shell
+- clear top-level navigation
+- a central “choose your workspace” section
+- right-rail contextual modules
+- consistent language across shared datasets
 
-Please review:
-- naming (`Workspace`, `Explore`, `Published Results`)
-- homepage structure and navigation
-- relationship between shared datasets and published outputs
-- open product and UX decisions in `05-open-questions.md`
+## Design principle
+
+The dashboard and portal are backed by the same datasets, so the UX should reinforce:
+
+> One data platform, multiple ways to work with the same trusted data.
+
+## Intended outcome
+
+A homepage that:
+- helps new users choose the right starting point
+- helps returning users quickly resume work
+- reduces confusion about overlapping tools
+- makes the relationship between operational, analytical, and published experiences explicit
