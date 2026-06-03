@@ -1,40 +1,33 @@
-# Homepage UX Review: GitHub-Style Entry Experience
+# Homepage UX Review
 
-This document set proposes a GitHub.com-inspired homepage for a shared data platform that supports three primary user intents:
+## Recommendation
 
-1. **Contribute & Build** — for data contributors and developers
-2. **Explore & Analyze** — for data readers and analysts
+Design the homepage as a **GitHub-style logged-in dashboard** for one shared data platform with three clear entry points:
+
+1. **Contribute & Build** — for contributors and developers
+2. **Explore & Analyze** — for readers and analysts
 3. **Published Results** — for curated, presentation-ready outputs
 
-The goal is to present these as **three ways of working within one platform**, not as three disconnected products.
+## Why
 
-## Included documents
+Both the dashboard and portal are backed by the same datasets, so the UX should communicate:
 
-- `01-summary.md` — high-level recommendation and rationale
-- `02-information-architecture.md` — naming, structure, navigation model
-- `03-homepage-mockup-github-style.md` — homepage wireframe and layout guidance
-- `04-content-copy.md` — proposed UI copy and microcopy
-- `05-open-questions.md` — decisions for product, UX, and engineering review
+> One platform, three ways to work with the same trusted data.
 
-## Core recommendation
+This approach helps users quickly understand where to start, reduces product fragmentation, and keeps the relationship between operational, analytical, and published experiences clear.
 
-Use a **logged-in dashboard/homepage pattern similar to GitHub.com**, with:
-- a shared platform shell
-- clear top-level navigation
-- a central “choose your workspace” section
-- right-rail contextual modules
-- consistent language across shared datasets
+## Included docs
 
-## Design principle
+- `docs/homepage-ux/01-summary.md`
+- `docs/homepage-ux/02-information-architecture.md`
+- `docs/homepage-ux/03-homepage-mockup-github-style.md`
+- `docs/homepage-ux/04-content-copy.md`
+- `docs/homepage-ux/05-open-questions.md`
 
-The dashboard and portal are backed by the same datasets, so the UX should reinforce:
+## Review focus
 
-> One data platform, multiple ways to work with the same trusted data.
-
-## Intended outcome
-
-A homepage that:
-- helps new users choose the right starting point
-- helps returning users quickly resume work
-- reduces confusion about overlapping tools
-- makes the relationship between operational, analytical, and published experiences explicit
+Please review:
+- naming (`Workspace`, `Explore`, `Published Results`)
+- homepage structure and navigation
+- relationship between shared datasets and published outputs
+- open product and UX decisions in `05-open-questions.md`
